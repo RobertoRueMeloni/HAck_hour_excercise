@@ -16,6 +16,11 @@
 
 const permPalin = str => {
 
+  if (str.length === 0) return 'insert valid string';
+  if (str.length === 1) return true;
+  const helper = () =>{
+    
+  }
 };
 
 /* 
