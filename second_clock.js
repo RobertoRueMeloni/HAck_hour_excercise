@@ -28,14 +28,44 @@ Hint: look up setInterval and clearInterval.
 
 */
 
+// class SecondClock {
+//   constructor(cb) {
+//     this.cb = cb;
+//   }
+
+//   start() {
+    
+//     if(this.cb<60){
+//       this.cb++;
+//     }
+//     else this.cb =0
+//     return setInterval(start(), this.cb*10000 )
+//   }
+
+
+//   stop() {}
+// }
+// const x = new SecondClock(0);
+// x.start()
+// //setInterval(x.start(),this.cb*1000)
+// module.exports = { SecondClock };
+
 class SecondClock {
   constructor(cb) {
     this.cb = cb;
+    this.count = 1;
+    this.intervalID;
   }
-
-  start() {}
-
-  stop() {}
+​
+  start() {
+    this.intervalID = setInterval(() => {
+      if (this.count === 61) this.count = 1;
+      this.cb(this.count++);
+    }, 1000);
+  }
+​
+  stop() {
+    this.count = 1;
+    clearInterval(this.intervalID);
+  }
 }
-
-module.exports = { SecondClock };
