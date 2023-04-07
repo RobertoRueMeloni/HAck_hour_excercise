@@ -13,8 +13,29 @@ fizzbuzz(16);
 */
 
 const fizzbuzz = num => {  
-  
+  //declare an array result
+  const result = [];
+  //loop from 0 to num
+  for(let i = 1; i<num; i++){
+    if (i%3 === 0 && i%5===0) {
+      result.push('fizzbuzz');
+      //break;
+    }
+    else if(i%3 === 0){
+      result.push('fizz')
+      //break;
+    }
+    else if(i%5 === 0){
+      result.push('buzz')
+      //break;
+    }else{
+      result.push(i)
+    }
+  }
+  return result
 };
+
+console.log(fizzbuzz(20))
 
 /*
 
@@ -36,7 +57,20 @@ fizzbuzzbazz(22);
 */
 
 const fizzbuzzbazz = num => {
-  
+  //declare the result array
+  const result = [];
+  //loop 1 to num
+  for(let i = 1; i<=num; i++){
+    //edje cases
+    if(i%3===0 && i%5 === 0) result.push('fizzbuzz');
+    else if(i%3 === 0 && i%7 === 0) result.push('fizzbazz');
+    else if (i%7 === 0 && i%5 === 0) result.push('buzzbazz');
+    else if (i%3 === 0) result.push('fizz');
+    else if (i%5 === 0) result.push('buzz');
+    else if (i%7===0 ) result.push('bazz');
+    else result.push(i)
+  }
+  return result;
 };
-
+console.log(fizzbuzzbazz(21))
 module.exports = {fizzbuzz, fizzbuzzbazz};
