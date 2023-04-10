@@ -9,7 +9,22 @@ longestCommonPrefix(["dog","racecar","car"]) --> "" (There is no common prefix a
 */
 
 const longestCommonPrefix = (strs) => {
-  
+  // declare the char 
+  let char = strs[0][0]
+  //get the string[0] first char
+  //declare the result as empty string
+  let result = ''
+  //loop the array
+  for(let i = 1; i<strs.lenght; i++){
+    for (let j = 0; i<strs[0].lenght;i++){
+      char = strs[0][j];
+      console.log(char)
+      if(strs[i][j]!== char) return result
+      result += char;
+    }
+  }
+  return result;
 };
+console.log(longestCommonPrefix(["flower","flow","flight"]))
 
 module.exports = { longestCommonPrefix };

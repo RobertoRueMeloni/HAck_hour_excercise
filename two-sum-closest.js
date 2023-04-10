@@ -27,17 +27,23 @@ O(n) time.
 */
 
 const twoSumClosest = (nums, target) => {
-  const cache = [];
-  const result = {}
-  for(let i = 0; i<nums.length; i++){
-    for (let j = i+1; j<nums.length; j++){
-      cache.push(nums[i]+nums[j])
+  const set = nums.sort()
+  let result = target - Math.abs(set[0]+set[1])
+  let output = Math.abs(set[0]+set[1])
+  console.log(set)
+  for(let i = 1; i<set.length-1; i++){
+    console.log(output)
+    if(Math.abs(set[i]+set[i+1])-target<result){
+      console.log(Math.abs(set[i]+set[i+1])-target)
+      console.log(result)
+      result = target - (set[i]+set[i+1]);
+      output = Math.abs(set[i]+set[i+1]);
+      
     }
   }
-  console.log(cache)
-
-  return Math.min(cache);
+  return output;
+ 
 };
 
 
-console.log(twoSumClosest([2, -2, 1],4))
+console.log(twoSumClosest([3, 1, 4, 3],6))
