@@ -58,6 +58,7 @@ class Elevator {
       return aboveFloors[0];
     }
   }
+  
 }
 const test = new Elevator();
 
@@ -67,8 +68,8 @@ test.requestFloor(8);
 test.requestFloor(4)
 test.requestFloor(3);
 test.move();
+console.log(test)
 test.move()
 console.log(test.findNextFloor())
-console.log(test)
 // test.move()
 // test.move()
